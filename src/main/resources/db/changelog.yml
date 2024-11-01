@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Ivan Stanovikhin
+      changes:
+        - sqlFile:
+            path: db/0.0.1/init-schema.sql
+            relativeToChangelogFile: false
+            splitStatements: true
+            stripComments: true
+        - sqlFile:
+            path: db/0.0.1/data-users.sql
+            relativeToChangelogFile: false
+            splitStatements: true
+            stripComments: true
+        - sqlFile:
+            path: db/0.0.1/data-email.sql
+            relativeToChangelogFile: false
+            splitStatements: true
+            stripComments: true
