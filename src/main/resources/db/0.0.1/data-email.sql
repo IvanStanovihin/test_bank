@@ -1,8 +1,8 @@
 INSERT INTO email_data (id, email, user_id)
-VALUES (1, 'petr@mail.ru', 1);
+VALUES (111, 'petr@mail.ru', 111);
 
 INSERT INTO email_data (id, email, user_id)
-VALUES (2, 'alex@mail.ru', 2);
+VALUES (222, 'alex@mail.ru', 222);
 
 INSERT INTO email_data (id, email, user_id)
-VALUES (3, 'ivan@mail.ru', 3);
+VALUES (333, 'ivan@mail.ru', 333);

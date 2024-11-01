@@ -52,7 +52,7 @@ public class JwtParser extends GenericFilterBean {
   private JwtAuthentication generate(Claims claims) {
     final JwtAuthentication jwtInfoToken = new JwtAuthentication();
     jwtInfoToken.setRoles(getRoles(claims));
-    jwtInfoToken.setUserId(String.valueOf(claims.get("userId", Long.class)));
+    jwtInfoToken.setUserId(claims.get("userId", Long.class));
     jwtInfoToken.setEmail(claims.getSubject());
     return jwtInfoToken;
   }

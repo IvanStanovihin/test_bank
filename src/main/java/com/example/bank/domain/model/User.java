@@ -3,6 +3,9 @@ package com.example.bank.domain.model;
 import com.example.bank.domain.authorization.CustomRole;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
@@ -12,6 +15,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -26,6 +30,12 @@ public class User {
   private String name;
   private LocalDateTime dateOfBirth;
   private String password;
+
+  @OneToMany(mappedBy = "user")
+  private List<EmailData> emailsData;
+
+  @OneToMany(mappedBy = "user")
+  private List<PhoneData> phonesData;
 
   @CollectionTable
   @Enumerated(EnumType.STRING)

@@ -36,7 +36,7 @@ public class JwtValidator {
         .setExpiration(accessExpiration)
         .signWith(jwtAccessSecret)
         .claim("roles", user.getRoles())
-        .claim("user_id", user.getId())
+        .claim("userId", user.getId())
         .compact();
   }
 

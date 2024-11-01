@@ -13,7 +13,7 @@ public class JwtAuthentication implements Authentication {
 
   private boolean authenticated;
   private String email;
-  private String userId;
+  private Long userId;
   private Set<CustomRole> roles;
 
   @Override
@@ -37,6 +37,6 @@ public class JwtAuthentication implements Authentication {
   }
 
   @Override
-  public String getName() { return userId; }
+  public String getName() { return email; }
 
 }

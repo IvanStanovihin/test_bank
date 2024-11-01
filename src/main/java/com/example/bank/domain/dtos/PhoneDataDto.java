@@ -3,6 +3,6 @@ package com.example.bank.domain.dtos;
 import lombok.Data;
 
 @Data
-public class EmailDataDto {
-  String email;
+public class PhoneDataDto {
+  private String phone;
 }

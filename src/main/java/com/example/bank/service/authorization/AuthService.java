@@ -10,9 +10,11 @@ import io.jsonwebtoken.Claims;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -65,6 +67,10 @@ public class AuthService {
       }
     }
     throw new RuntimeException("Invalid JWT token");
+  }
+
+  public Long getUserId() {
+    return getAuthInfo().getUserId();
   }
 
   public JwtAuthentication getAuthInfo() {
