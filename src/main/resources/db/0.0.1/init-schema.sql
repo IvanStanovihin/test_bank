@@ -2,7 +2,9 @@
 CREATE TABLE IF NOT EXISTS public.accounts (
     id bigint NOT NULL,
     balance real,
-    user_id bigint
+    balance_limit real,
+    user_id bigint,
+    version bigint
 );
 
 CREATE TABLE IF NOT EXISTS public.email_data (

@@ -18,3 +18,8 @@ databaseChangeLog:
             relativeToChangelogFile: false
             splitStatements: true
             stripComments: true
+        - sqlFile:
+            path: db/0.0.1/data-accounts.sql
+            relativeToChangelogFile: false
+            splitStatements: true
+            stripComments: true

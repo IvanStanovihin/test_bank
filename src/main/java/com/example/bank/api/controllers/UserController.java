@@ -4,11 +4,13 @@ import com.example.bank.domain.dtos.ChangeEmailDto;
 import com.example.bank.domain.dtos.ChangePhoneDto;
 import com.example.bank.domain.dtos.EmailDataDto;
 import com.example.bank.domain.dtos.PhoneDataDto;
+import com.example.bank.domain.dtos.TransferDto;
 import com.example.bank.domain.dtos.UserDto;
 import com.example.bank.domain.dtos.UserFilterDto;
 import com.example.bank.domain.model.EmailData;
 import com.example.bank.domain.model.PhoneData;
 import com.example.bank.domain.model.User;
+import com.example.bank.service.AccountService;
 import com.example.bank.service.PhoneDataService;
 import com.example.bank.service.UserService;
 import com.example.bank.service.authorization.AuthService;
@@ -36,6 +38,7 @@ public class UserController {
   private final UserService userService;
   private final PhoneDataService phoneDataService;
   private final AuthService authService;
+  private final AccountService accountService;
 
   @PostMapping("/filter")
   public Page<UserDto> getUsers(
@@ -79,5 +82,11 @@ public class UserController {
   @PutMapping("/phone")
   public boolean changePhone(@RequestBody ChangePhoneDto changePhoneDto) {
     return phoneDataService.changePhone(authService.getUserId(), changePhoneDto);
+  }
+
+  @PreAuthorize("hasAuthority('USER')")
+  @PostMapping("/transfer")
+  public boolean transfer(@RequestBody TransferDto transferDto) {
+    return accountService.transferMoney(authService.getUserId(), transferDto.getToUserId(), transferDto.getAmount());
   }
 }

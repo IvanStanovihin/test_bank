@@ -9,7 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Version;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "accounts")
 public class Account {
@@ -23,4 +26,9 @@ public class Account {
   private User user;
 
   private Float balance;
+
+  private Float balanceLimit;
+
+  @Version
+  private Long version;
 }
