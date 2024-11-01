@@ -10,5 +10,4 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
 
   @Query("from User u left join EmailData e on u.id=e.user.id where e.email=:email")
   Optional<User> findByEmail(String email);
-
 }

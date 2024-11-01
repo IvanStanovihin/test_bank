@@ -44,7 +44,7 @@ public class AuthService {
       final String saveRefreshToken = refreshStorage.get(email);
       if (saveRefreshToken != null && saveRefreshToken.equals(refreshToken)) {
         final User user = userRepository.findByEmail(email)
-            .orElseThrow(() ->  new UserNotFoundException(email));
+            .orElseThrow(() -> new UserNotFoundException(email));
         final String accessToken = jwtValidator.generateAccessToken(user, email);
         return new JwtResponse(accessToken, null);
       }
@@ -59,7 +59,7 @@ public class AuthService {
       final String saveRefreshToken = refreshStorage.get(email);
       if (saveRefreshToken != null && saveRefreshToken.equals(refreshToken)) {
         final User user = userRepository.findByEmail(email)
-            .orElseThrow(() ->  new UserNotFoundException(email));
+            .orElseThrow(() -> new UserNotFoundException(email));
         final String accessToken = jwtValidator.generateAccessToken(user, email);
         final String newRefreshToken = jwtValidator.generateRefreshToken(user, email);
         refreshStorage.put(email, newRefreshToken);

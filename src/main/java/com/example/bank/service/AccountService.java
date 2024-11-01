@@ -58,7 +58,8 @@ public class AccountService {
       throw new IllegalAmountException(amount);
     }
     if (accountSender.getBalance() < amount) {
-      log.error("On account: {} transferred amount: {} exceed current balance: {}", accountSender.getId(), amount, accountSender.getBalance());
+      log.error("On account: {} transferred amount: {} exceed current balance: {}", accountSender.getId(), amount,
+          accountSender.getBalance());
       throw new IllegalAmountException(amount);
     }
 

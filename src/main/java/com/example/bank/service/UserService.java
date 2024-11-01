@@ -1,7 +1,6 @@
 package com.example.bank.service;
 
 import com.example.bank.dao.repository.EmailDataRepository;
-import com.example.bank.dao.repository.PhoneDataRepository;
 import com.example.bank.dao.repository.UserRepository;
 import com.example.bank.domain.dtos.ChangeEmailDto;
 import com.example.bank.domain.dtos.UserDto;
@@ -63,7 +62,6 @@ public class UserService {
         .build();
     return emailDataRepository.save(emailData);
   }
-
 
 
 }

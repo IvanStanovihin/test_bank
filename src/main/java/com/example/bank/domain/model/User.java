@@ -1,10 +1,7 @@
 package com.example.bank.domain.model;
 
 import com.example.bank.domain.authorization.CustomRole;
-
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.CollectionTable;

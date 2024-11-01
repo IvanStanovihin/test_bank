@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @RestControllerAdvice
 public class CustomExceptionHandler {
 
-
   @ExceptionHandler({Exception.class, Throwable.class})
   public ResponseEntity<Object> customHandling(Exception e) {
     log.error("Exception occurred: {}", e.getMessage(), e);

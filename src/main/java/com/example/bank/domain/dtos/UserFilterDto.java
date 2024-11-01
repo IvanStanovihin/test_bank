@@ -9,7 +9,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class UserFilterDto {
 
-  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
   private LocalDateTime dateOfBirth;
   private String phone;
   private String name;
